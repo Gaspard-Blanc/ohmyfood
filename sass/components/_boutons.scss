@@ -1,0 +1,290 @@
+/*Parti localisation*/
+
+.bouton {
+    position: relative;
+    font-family: 'Roboto';
+    font-size: 16px;
+    padding: 15px 20px;
+    margin: 0;
+    display: block;
+    border: none;
+    border-radius: 60px;      
+    color: $texte-inverse;
+    cursor: pointer;
+    background: linear-gradient(to bottom right, $couleur-secondaire, 40%, $couleur-primaire);
+    transition: all ease-in-out 300ms;
+    text-decoration: none;
+    opacity: 1;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: 0 10px 20px darken($couleur-bg, 30%);
+    @include tablette {
+        font-size: 22px;
+        padding: 20px 60px;
+    }
+    @include bureau {
+        font-size: 24px;
+    }
+
+    &:hover {
+        opacity: 0.8;
+        box-shadow: 0 15px 25px darken($couleur-bg, 50%);
+    }
+}
+
+
+/*Parti fonctionnement*/
+
+.fonctionnement a{ 
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: $couleur-bg;
+    color: $texte;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px darken($couleur-bg, 15%);
+    @include bureau {
+        margin-bottom: 90px;
+    }
+    
+    &:hover {
+        background-color: lighten($couleur-primaire, 35%);
+
+        &> .fas {
+            color: $couleur-primaire;
+        }
+    }
+
+    >.fas {
+        color: darken($couleur-bg, 50%);
+        padding: 20px 20px;
+        font-size: 25px;
+        @include tablette {
+            font-size: 28px;
+        }
+        @include bureau {
+            font-size: 20px;
+            padding: 15px;
+        }
+    }
+
+    >p {
+        font-family: 'Roboto-Bold';
+        @include bureau {
+            padding-right: 10px;
+        }
+    }
+}
+
+ol {
+    counter-reset: puce;
+    padding-left: 10px;
+    @include bureau {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    li {
+        font-size: 18px;
+        list-style-type: none;
+        counter-increment: puce;
+        @include tablette {
+            font-size: 22px;
+        }
+
+
+        &::before {
+            content: counter(puce);
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            color: $texte-inverse;
+            background: $couleur-primaire;
+            width: 26px;
+            height: 26px;
+            border-radius: 13px;
+            position: relative;
+            top:55px;
+            left:-13px;
+            @include tablette {
+                top: 60px;
+            }
+        }
+    }        
+}
+
+/*Cartes partie restaurants de la page d'acceuil*/
+
+.lien-carte {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: $texte;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 20px darken($couleur-bg, 25%);
+    @include tablette {
+        height: 350px;
+    }
+    @include bureau {
+        width: 100%;
+    }
+
+    &__image {
+        height: 450px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px 20px 0 0;
+
+        img {
+            width: 100%;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        background-color: $texte-inverse;
+        border-radius: 0 0 20px 20px;
+        padding-left: 20px;
+
+        h4 {
+            font-size: 18px;
+            font-family: 'Roboto-Bold';
+            margin: 0;
+            padding-top: 12px;
+            padding-bottom: 6px;
+            @include tablette {
+                font-size: 22px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            margin: 0;
+            padding-bottom: 12px;
+            @include tablette {
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+/*Bouton coeur des cartes*/
+
+.carte {
+    position: relative;
+    z-index: 0;
+
+    &__fav {
+        position: relative;
+        z-index: 1;
+        left: 87%;
+        bottom: 90px;
+        font-size: 25px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        @include tablette {
+            font-size: 28px;
+        }
+
+        &:hover {
+            .far {
+                opacity: 0;
+            }
+
+            .fas::before {
+                transform: scale(1);
+            }
+        }
+    }
+
+    .fas::before {
+        transform: scale(0);
+        transition: transform 600ms ease-in-out;
+        z-index: 0;
+        position: absolute;
+        top: 3px;
+        right: 10px;
+        background-clip: text;
+        color: transparent;
+        background-image: linear-gradient($couleur-secondaire, $couleur-primaire);
+        @include tablette {
+            right: 14px;
+            top: 1px;
+        }
+    }
+}
+
+/* pastille "nouveau" */
+
+.pastille {
+    font-size: 14px;
+    font-family: 'Roboto-Bold';
+    color: darken($couleur-tertiaire, 35%);
+    background-color: $couleur-tertiaire;
+    position: absolute;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 3px;
+    right: 20px;
+    @include tablette {
+        font-size: 18px;
+    }
+}
+
+/*Bouton coeur des menu*/
+
+.menu__fav {
+    position: relative;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 10px;
+    left: 40px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    @include tablette {
+        font-size: 30px;
+    }
+
+    &:hover {
+        .far {
+            opacity: 0;
+        }
+
+        .fas::before {
+            transform: scale(1);
+        }
+    }
+
+    .fas::before {
+        transform: scale(0);
+        transition: transform 600ms ease-in-out;
+        z-index: 0;
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        background-clip: text;
+        color: transparent;
+        background-image: linear-gradient($couleur-secondaire, $couleur-primaire);
+        @include tablette {
+            right: 20px;
+        }
+    }
+}
+

@@ -1,0 +1,72 @@
+footer {
+    background-color: darken($couleur-bg, 70%);
+    color: $texte-inverse;
+    padding-left: 20px;
+    height: 350px;
+    @include tablette {
+        padding-left: 0;
+    }
+    @include bureau {
+        padding-left: 40px;
+    }
+
+    h1{
+        font-family: 'Shrikhand';
+        font-size: 20px;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        margin: 0;
+        @include tablette {
+            font-size: 30px;
+            padding-top: 30px;
+            text-align: center;
+        }
+        @include bureau {
+            font-size: 32px;
+            padding-top: 32px;
+        }
+    }
+}
+
+ul {
+    padding-left: 0;
+    margin: 0;
+    @include tablette {
+        text-align: center;
+    }
+
+    li {
+        list-style: none;
+        padding-bottom: 8px;
+        @include bureau {
+            padding-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: $texte-inverse;
+            font-family: 'Roboto';
+            font-size: 18px;
+            @include tablette {
+                font-size: 22px;
+            }
+            @include bureau {
+                font-size: 24px;
+            }
+
+            .fas {
+                padding-right: 2px;
+                font-size: 15px;
+                width: 25px;
+                @include tablette {
+                    font-size: 20px;
+                    width: 40px;
+                }
+                @include bureau {
+                    font-size: 22px; 
+                    width: 40px;
+                }
+            }
+        }
+    }
+}

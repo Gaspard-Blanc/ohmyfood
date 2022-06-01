@@ -1,0 +1,38 @@
+@mixin titre-acceuil {
+    font-family: 'Roboto-Bold';
+    font-size: 25px;
+    margin-top: 50px;
+    @include tablette {
+        font-size: 30px;
+    }
+    @include bureau {
+        font-size: 32px;
+    }
+}
+
+@mixin typo-acceuil {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include tablette {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    @include bureau {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@mixin tablette {
+    @media screen and (min-width:768px) and (max-width:991px){
+        @content;
+    }
+}
+
+@mixin bureau {
+    @media screen and (min-width:992px){
+        @content;
+    }
+}

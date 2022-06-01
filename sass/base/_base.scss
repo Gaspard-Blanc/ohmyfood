@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Shrikhand';
+    font-weight: normal;
+    src: url("polices/Shrikhand-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: normal;
+    src: url("polices/Roboto-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    font-weight: bold;
+    src: url("polices/Roboto-Bold.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto-Light";
+    src: url("polices/Roboto-Light.ttf") format("truetype");
+}
+
+body {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+
+    main {font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}

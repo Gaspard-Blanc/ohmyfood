@@ -1,0 +1,124 @@
+.localisation {
+    height: 370px;
+    background-color: $couleur-bg;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__lieu {
+        display: flex;
+        height: 60px;
+        width: 100%;
+        background-color: darken($couleur-bg,4.8%);
+        box-shadow: 0 4px 5px darken($couleur-bg,20%) inset;
+        @include tablette {
+            height: 80px;
+        }
+        @include bureau {
+            height: 80px;
+        }
+
+        i,>p {
+            margin: auto;
+            font-size: 20px;
+            padding-right: 30px;
+            @include tablette {
+                font-size: 25px;
+            }
+            @include bureau {
+                font-size: 28px;
+            }
+        }
+
+        >p {
+            font-weight: bold;
+        }
+    }
+
+    >h2 {
+        text-align: center;
+        font-size: 25px;
+        font-family: 'Roboto-Bold';
+        padding: 40px 50px 20px 50px;
+        margin: 0;
+        @include tablette {
+            font-size: 30px;
+        }
+        @include bureau {
+            font-size: 32px;
+        }
+    }
+
+    >p {
+        text-align: center;
+        font-size: 18px;
+        font-family: 'Roboto-Light';
+        padding: 0 20px 30px 20px;
+        margin: 0;
+        @include tablette {
+            font-size: 22px;
+            padding-bottom: 50px;
+        }
+        @include bureau {
+            font-size: 26px;
+        }
+    }
+
+    >a { 
+        width: 45%;
+    }
+}
+
+.fonctionnement {
+    @include typo-acceuil;
+
+    >h3 {
+        @include titre-acceuil;
+    }
+}
+
+.restaurants {
+    @include typo-acceuil;
+    background-color: $couleur-bg;
+
+
+    >h3 {
+        @include titre-acceuil;
+    }
+
+    @include bureau {
+
+        .carte--position {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        .carte {
+            width: 48%;
+            height: 300px;
+        }
+    }
+}
+
+.loader {
+    position: absolute;
+    z-index: -1;
+    height: 900px;
+    width: 100%;
+    background-color: #99E2D0;
+    font-family: "Shrikhand";
+    font-size: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    animation: durée $loader-duree ease-out both;
+
+ 
+    p {
+        animation: chargement 2000ms cubic-bezier(.45,-0.06,0,1.06) 500ms both;
+    }
+}

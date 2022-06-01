@@ -1,0 +1,40 @@
+@keyframes menu {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    65% {
+        opacity: 1;      
+    }
+
+    70% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes chargement {
+    0% {
+      transform: perspective(100px) scale3d(0, 0, 0) translateZ(0) rotate(0);
+    }
+
+    100% {
+      transform: perspective(350px) scale3d(1, 1, 5) translateZ(3rem) rotate(6turn);
+    }
+  }
+  
+@keyframes durée {
+    0%, 80% {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    100% {
+      opacity: 0;
+      z-index: -1;
+    }
+  }

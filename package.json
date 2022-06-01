@@ -1,0 +1,14 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css --style expanded",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
+},
+
+  "author": "gaspard_blanc",
+  "license": "ISC",
+  "browserslist": "last 6 versions"
+}
