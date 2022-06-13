@@ -222,7 +222,7 @@ ol {
         color: transparent;
         background-image: linear-gradient($couleur-secondaire, $couleur-primaire);
         @include tablette {
-            right: 14px;
+            right: 11px;
             top: 1px;
         }
     }
@@ -283,7 +283,8 @@ ol {
         color: transparent;
         background-image: linear-gradient($couleur-secondaire, $couleur-primaire);
         @include tablette {
-            right: 20px;
+            right: 13px;
+            top: 10px;
         }
     }
 }
